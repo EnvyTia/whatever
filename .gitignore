@@ -1,0 +1,38 @@
+# Node.js dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment secrets
+.env
+
+# OS-specific
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# VS Code settings
+.vscode/
+
+# Mac junk
+.AppleDouble
+.LSOverride
+
+# Windows junk
+$RECYCLE.BIN/
+
+# Other temp files
+*.tmp
+*.swp
+*.bak
+*.old
+*.orig
