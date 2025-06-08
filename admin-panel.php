@@ -1,3 +1,12 @@
+<?php
+// Logging akses ke honeypot admin panel
+$ip = $_SERVER['REMOTE_ADDR'];
+$agent = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
+$timestamp = date('Y-m-d H:i:s');
+$logEntry = "[$timestamp] IP: $ip | Agent: $agent | Akses: admin-panel.php\n";
+file_put_contents('honeypot_access.log', $logEntry, FILE_APPEND);
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -132,7 +141,7 @@
     </table>
 
     <p class="footer-note">Data ini merupakan bagian dari monitoring internal Dinas Lingkungan Hidup Kota Malang.</p>
-    <a href="index.html" class="back-link">← Kembali ke halaman utama</a>
+    <a href="index.php" class="back-link">← Kembali ke halaman utama</a>
   </div>
 
 </body>

