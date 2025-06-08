@@ -1,108 +1,145 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="generator" content="WordPress 4.2">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Database Keluarga RT/RW 02/07 Sukolilo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dinas Lingkungan Hidup Kota Malang</title>
   <style>
     body {
-      background-color: #f4f1e8;
-      font-family: Arial, sans-serif;
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
+      background-color: #f0f4f8;
+      color: #333;
     }
-    header, footer {
-      background-color: #2c3e50;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
+
+    header {
+      background-color: #004d40;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
+
+    header img {
+      height: 50px;
+    }
+
+    nav {
+      background-color: #00695c;
+      display: flex;
+      justify-content: center;
+    }
+
     nav a {
       color: white;
-      margin: 0 10px;
+      padding: 1rem;
       text-decoration: none;
+      font-weight: bold;
     }
-    main {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
+
+    nav a:hover {
+      background-color: #004d40;
     }
-    h1, h2 {
-      color: #2c3e50;
-    }
-    .tree {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin-bottom: 20px;
+
+    .hero {
+      background: url('malang-green.jpg') no-repeat center center/cover;
+      color: white;
+      padding: 4rem 2rem;
       text-align: center;
-      background: #fff;
     }
-    .login-form {
-      background: #fff3f3;
-      border: 1px solid #f5c2c2;
-      padding: 15px;
-      width: 300px;
-      margin: auto;
+
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
     }
-    .login-form input {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .robots {
-      font-family: monospace;
-      background: #f0f0f0;
-      padding: 10px;
-      border: 1px solid #ccc;
+
+    section {
+      margin-bottom: 2rem;
     }
-    .error {
-      color: red;
-      font-family: monospace;
+
+    section h2 {
+      color: #004d40;
+    }
+
+    footer {
+      background-color: #004d40;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-link {
+      display: block;
+      font-size: 0.8rem;
+      color: #ccc;
+      text-decoration: none;
+      margin-top: 0.3rem;
+    }
+
+    .footer-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Login</a>
-      <a href="#">Admin</a>
-      <a href="#">Search</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <h1>Family Tree Tracker</h1>
-    <div class="tree">
-      <h2>Royal Family Tree</h2>
-      <p>Charles — Anne — Elizabeth</p>
-      <p>|—— Charles — Anne — Camillia</p>
-      <p>       |—— Harry — Andrew — Edward</p>
+    <div>
+      <img src="./images/pemkot.png" alt="Logo Pemkot Malang">
     </div>
+    <h1>Dinas Lingkungan Hidup Kota Malang</h1>
+  </header>
 
-    <p class="error">Warning: include(config.php): failed to open stream: No such file or directory in /var/www/html/error.php on line 39</p>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="#">Berita</a>
+    <a href="#">Layanan</a>
+    <a href="#">Informasi Publik</a>
+    <a href="#">Kontak</a>
+  </nav>
 
-    <h2>Login</h2>
-    <form class="login-form">
-      <label>Username:<br><input type="text" name="username" value="administrator"></label><br>
-      <label>Password:<br><input type="password" name="password" value="password123"></label><br>
-      <button type="submit">Login</button>
-      <p class="error">Incorrect username or password</p>
-    </form>
+  <div class="hero">
+    <h1>Menuju Kota Malang yang Bersih, Sehat dan Lestari</h1>
+    <p>Pelayanan dan pengelolaan lingkungan hidup yang berkelanjutan.</p>
+  </div>
 
-    <h2>robots.txt</h2>
-    <pre class="robots">
-User-agent: *
-Disallow: /admin/
-Disallow: /phynyradmin/
-Disallow: /config.php
-Disallow: /backup
-    </pre>
-  </main>
+  <div class="container">
+    <section>
+      <h2>📢 Pengumuman Terkini</h2>
+      <ul>
+        <li>🌿 Program Adopsi Pohon dibuka untuk masyarakat umum sampai 30 Juni 2025.</li>
+        <li>🛠️ Jadwal pengangkutan sampah rumah tangga mengalami penyesuaian mulai minggu depan.</li>
+        <li>📄 Formulir Permohonan Izin Lingkungan versi terbaru sudah tersedia.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🌱 Layanan Kami</h2>
+      <ul>
+        <li>Pelaporan pencemaran air dan udara</li>
+        <li>Permohonan penebangan pohon dengan izin</li>
+        <li>Pengajuan Sertifikasi Pengelolaan Limbah</li>
+        <li>Pengaduan lingkungan berbasis masyarakat</li>
+      </ul>
+    </section>
+  </div>
+
   <footer>
-    &copy; 2015 RT/RW 02/07 Sukolilo. All rights reserved.
+    &copy; 2025 Dinas Lingkungan Hidup Kota Malang  
+    <br>
+    <a href="panel-akses.html" class="footer-link">Sistem informasi internal</a>
   </footer>
+
 </body>
 </html>
